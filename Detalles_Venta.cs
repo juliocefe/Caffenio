@@ -16,7 +16,7 @@ namespace Caffenio
         {
             InitializeComponent();
         }
-
+        //lalalalalalallalalaallaakakkakakaakak
         Manejador_Base_Datos bd = new Manejador_Base_Datos();
 
         Manejador_ventas obj = new Manejador_ventas();
