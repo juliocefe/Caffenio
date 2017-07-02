@@ -19,18 +19,30 @@ namespace Caffenio
             InitializeComponent();
         }
 
-        public Ingredientes(string nombre, double precio)
+        public Ingredientes( /*Datos Producto */int idprod, string nombreprod, double precio, /* Datos Tipo  */  int idtipo, string tipo)
         {
             InitializeComponent();
 
-            this.nombre2 = nombre;
+            //Datos del Modulo producto
+            this.idprod = idprod;
+            this.nombreprod = nombreprod;
+            this.precioprod = precio;
 
-            this.precio2 = precio;
+            //Datos del MOdulo Tipos
+            this.idtipos = idtipo;
+            this.tipo = tipo;
+
         }
 
+        //Productos
+        int idprod;
+        string nombreprod;
+        double precioprod;
 
-        string nombre2;
-        double precio2;
+
+        //Tipos
+        int idtipos;
+        string tipo;
 
 
         Manejador_Base_Datos bd = new Manejador_Base_Datos();
@@ -91,7 +103,7 @@ namespace Caffenio
         {
             try
             {
-                MySqlConnection conexion = new MySqlConnection("server = localhost; database =  Caffenio ; uid =  root; pwd =   123  ;");
+                MySqlConnection conexion = new MySqlConnection("server = localhost; database =  Caffenio2 ; uid =  root; pwd =   123  ;");
 
                 MySqlCommand comando = new MySqlCommand("insert into ingredientes (nombre_ing, precio_ing)values('" + textBox1.Text + "'," + textBox2.Text + ");", conexion);
                 conexion.Open();
@@ -141,13 +153,79 @@ namespace Caffenio
              
         }
 
+        int idIng;
+        string nombreing;
+        double precioing;
+
+        double total;
+
+
+        int idventa;
         private void button5_Click(object sender, EventArgs e)
         {
+            string query = "select * from ingredientes where id_ing = " + dataGridView1.CurrentRow.Cells[0].Value + ";";
+
+            bd.AbrirConexion();
+
+            bd.EjecutarConsulta(query);
+
+            while (bd.ResultadoConsulta.Read())
+            {
+                idIng = Convert.ToInt32(bd.ResultadoConsulta["id_ing"]);
+                nombreing = bd.ResultadoConsulta["nombre_ing"].ToString();
+                precioing = Convert.ToDouble(bd.ResultadoConsulta["precio_ing"]);
+            }
+            bd.CerrarConexion();
+            //Suma de el precio del producto con el precio ingrediente
+            total = precioprod + precioing;
+
+            MessageBox.Show("Producto: " +nombreprod+ " Precio: "+ precioprod + " Tipo: "+ tipo +" Ingrediente: "+ nombreing +" Precion ing: "+ precioing+ " Total = " + total);
 
 
 
-            Tipos obj = new Tipos();
+            string comando = "insert into ventas values(null," + idprod + "," + idIng + "," + total + ", curdate(), curtime());";
+
+            bd.AbrirConexion();
+
+            bd.EjecutarComando(comando);
+
+            MessageBox.Show("Compra enviada a la BD");
+            bd.CerrarConexion();
+
+
+
+
+            ///Capturar el id de la venta
+            bd.AbrirConexion();
+
+
+            string query2 = "select max(id_ven) from ventas";
+
+            bd.EjecutarConsulta(query2);
+
+
+
+            while (bd.ResultadoConsulta.Read())
+            {
+                idventa = bd.ResultadoConsulta.GetInt32(0);   
+            }
+
+            bd.CerrarConexion();
+
+
+            //Mandar datos a Detalles de venta
+
+            bd.AbrirConexion();
+
+            string comando3 = "insert into detallesven values(null," + idventa + ",'" + nombreprod + "','" + tipo + "','" + nombreing + "');";
+
+            bd.EjecutarComando(comando3);
+
+            bd.CerrarConexion();
+
+            Productos obj = new Productos(total);
             obj.Show();
+         
         }
     }
 }

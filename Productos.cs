@@ -18,6 +18,16 @@ namespace Caffenio
             InitializeComponent();
         }
 
+
+        public Productos(double total)
+        {
+            InitializeComponent();
+
+            this.total = total;
+        }
+
+        double total;
+
         Manejador_Base_Datos bd = new Manejador_Base_Datos();
         Manejador_Productos obj = new Manejador_Productos();
         private void Form1_Load(object sender, EventArgs e)
@@ -37,7 +47,7 @@ namespace Caffenio
 
             try
             {
-                MySqlConnection conexion = new MySqlConnection("server = localhost; database = Caffenio; uid = root; pwd = 123;");
+                MySqlConnection conexion = new MySqlConnection("server = localhost; database = Caffenio2; uid = root; pwd = 123;");
 
 
                 MySqlCommand Insertar = new MySqlCommand("insert into productos (nombre_pro, precio_pro)values('" + textBox1.Text + "'," + textBox2.Text + ");", conexion);
@@ -120,6 +130,7 @@ namespace Caffenio
             Close();
         }
 
+        int id;
         string nombre;
         double precio;
         private void button5_Click(object sender, EventArgs e)
@@ -134,12 +145,13 @@ namespace Caffenio
 
             while (bd.ResultadoConsulta.Read())
             {
+                id = Convert.ToInt32(bd.ResultadoConsulta["id_pro"]);
                 nombre = bd.ResultadoConsulta["nombre_pro"].ToString();
                 precio = Convert.ToDouble(bd.ResultadoConsulta["precio_pro"]);
             }
             
 
-            Ingredientes obj = new Ingredientes(nombre, precio);
+            Tipos obj = new Tipos(id,nombre, precio);
             obj.Show();
 
 

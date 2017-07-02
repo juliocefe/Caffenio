@@ -17,7 +17,7 @@ namespace Caffenio
         MySqlDataReader lectorDatos;
 
         //Se declaran aqui, por si se quiere llegar a cambiar la base de datos, psw o usuario
-        string bd = "Caffenio";
+        string bd = "Caffenio2";
         string user = "root";
         string psw = "123";
 

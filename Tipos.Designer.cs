@@ -52,6 +52,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(39, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(403, 150);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -99,6 +100,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "Elegir";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Column1
             // 
