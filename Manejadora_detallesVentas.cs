@@ -24,15 +24,7 @@ namespace Caffenio
            while (bd.ResultadoConsulta.Read())
            {
                obj = new clsDetallesVenta();
-               //obj.Id = Convert.ToInt32(bd.ResultadoConsulta["t6.id_venf"]);
-               //obj.Nombre = bd.ResultadoConsulta["t6.nombre_pro"].ToString();
-               //obj.Tipo = bd.ResultadoConsulta["t6.tipo_pro"].ToString();
-               //obj.Descripcion = bd.ResultadoConsulta["t6.Descri_pro"].ToString();
-               //obj.Ingrediente = bd.ResultadoConsulta["t5.nombre_ing"].ToString();
-               //obj.Cantidad = Convert.ToInt32(bd.ResultadoConsulta["t6.cant_ing"]);
-               //obj.Total = Convert.ToDouble(bd.ResultadoConsulta["t6.total"]);
-               //obj.Fecha = bd.ResultadoConsulta["t6.fecha"].ToString();
-               //obj.Hora = bd.ResultadoConsulta["t6.hora"].ToString();
+      
 
                obj.Id = bd.ResultadoConsulta.GetInt32(0);
                obj.Nombre = bd.ResultadoConsulta.GetString(1);

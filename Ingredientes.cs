@@ -19,6 +19,20 @@ namespace Caffenio
             InitializeComponent();
         }
 
+        public Ingredientes(string nombre, double precio)
+        {
+            InitializeComponent();
+
+            this.nombre2 = nombre;
+
+            this.precio2 = precio;
+        }
+
+
+        string nombre2;
+        double precio2;
+
+
         Manejador_Base_Datos bd = new Manejador_Base_Datos();
         Manejador_Ingredientes obj = new Manejador_Ingredientes();
         private void Ingredientes_Load(object sender, EventArgs e)
@@ -125,6 +139,15 @@ namespace Caffenio
                  dataGridView1.Rows.Add(item.Id, item.Nombre, item.Precio);
 	         }
              
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+
+
+            Tipos obj = new Tipos();
+            obj.Show();
         }
     }
 }

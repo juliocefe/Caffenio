@@ -21,7 +21,7 @@ namespace Caffenio
  
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 obj = new Form1();
+            Productos obj = new Productos();
             obj.Show();
         }
 
