@@ -44,7 +44,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(302, 226);
+            this.button3.Location = new System.Drawing.Point(332, 300);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 5;
@@ -62,7 +62,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(303, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(318, 242);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -84,7 +84,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 226);
+            this.button1.Location = new System.Drawing.Point(7, 300);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -94,21 +94,21 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 184);
+            this.textBox1.Location = new System.Drawing.Point(10, 265);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 7;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 184);
+            this.textBox2.Location = new System.Drawing.Point(116, 265);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 8;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(174, 226);
+            this.button2.Location = new System.Drawing.Point(169, 300);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
@@ -118,7 +118,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(93, 226);
+            this.button4.Location = new System.Drawing.Point(88, 300);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 10;
@@ -128,9 +128,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(264, 175);
+            this.button5.Location = new System.Drawing.Point(358, 177);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(89, 36);
+            this.button5.Size = new System.Drawing.Size(126, 77);
             this.button5.TabIndex = 11;
             this.button5.Text = "compra";
             this.button5.UseVisualStyleBackColor = true;
@@ -140,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 262);
+            this.ClientSize = new System.Drawing.Size(540, 335);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);

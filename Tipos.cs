@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Caffenio
 {
@@ -41,7 +42,7 @@ namespace Caffenio
         {
 
 
-            foreach (var t in obj.MostrarTipos() )
+            foreach (var t in obj.MostrarPorId(idprod) )
             {
                 dataGridView1.Rows.Add(t.Id, t.Fk, t.Tipo, t.Descripcion);
             }
@@ -73,6 +74,40 @@ namespace Caffenio
             Ingredientes obj = new Ingredientes(idprod,nombreprod,precioprod, idTipos, tipo);
             obj.Show();
 
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                MySqlConnection conexion = new MySqlConnection("server = localhost; database = caffenio2; uid = root; pwd = 123");
+                conexion.Open();
+
+                MySqlCommand comando = new MySqlCommand("insert into detallespro values(null," + textBox1.Text + ",'" + textBox2.Text + "','" + textBox3.Text + "')", conexion);
+
+                comando.ExecuteNonQuery();
+
+             
+
+                conexion.Close();
+                MessageBox.Show("Datos enviados a la BD");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("El producto seleccionado no se encuentra en la Base de Datos");
+            }
+
+            foreach (var t in obj.MostrarTipos())
+            {
+                dataGridView1.Rows.Add(t.Id, t.Fk, t.Tipo, t.Descripcion);
+            }
         }
     }
 }

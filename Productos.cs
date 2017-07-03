@@ -154,8 +154,15 @@ namespace Caffenio
             Tipos obj = new Tipos(id,nombre, precio);
             obj.Show();
 
+            bd.CerrarConexion();
 
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Tipos obj = new Tipos();
+            obj.Show();
         }
     }
 }
