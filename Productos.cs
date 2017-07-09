@@ -156,13 +156,14 @@ namespace Caffenio
 
             bd.CerrarConexion();
 
-
+            this.Close();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             Tipos obj = new Tipos();
             obj.Show();
+           
         }
     }
 }

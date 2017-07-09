@@ -45,6 +45,31 @@ namespace Caffenio
 
             
         }
-        
+
+
+
+
+        public List<Carritoventass> Agregarids(int idven, int idprod, int iding)
+        {
+            List<Carritoventass> Lista = new List<Carritoventass>();
+
+            Carritoventass obj = new Carritoventass();
+
+
+            obj.Idven = idven;
+            obj.Idprod = idprod;
+            obj.Iding = iding;
+
+          
+            Lista.Add(obj);
+
+            return Lista;
+
+
+
+        }
+
+
+     
     }
 }

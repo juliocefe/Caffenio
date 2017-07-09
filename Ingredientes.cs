@@ -50,7 +50,7 @@ namespace Caffenio
         private void Ingredientes_Load(object sender, EventArgs e)
         {
 
-
+            
             foreach (var item in obj.MostrarIngredientes())
             {
                 dataGridView1.Rows.Add(item.Id, item.Nombre, item.Precio);
@@ -103,7 +103,7 @@ namespace Caffenio
         {
             try
             {
-                MySqlConnection conexion = new MySqlConnection("server = localhost; database =  Caffenio2 ; uid =  root; pwd =   123  ;");
+                MySqlConnection conexion = new MySqlConnection("server = localhost; database =  Caffenio3 ; uid =  root; pwd =   123  ;");
 
                 MySqlCommand comando = new MySqlCommand("insert into ingredientes (nombre_ing, precio_ing)values('" + textBox1.Text + "'," + textBox2.Text + ");", conexion);
                 conexion.Open();
@@ -179,18 +179,18 @@ namespace Caffenio
             //Suma de el precio del producto con el precio ingrediente
             total = precioprod + precioing;
 
-            MessageBox.Show("Producto: " +nombreprod+ " Precio: "+ precioprod + " Tipo: "+ tipo +" Ingrediente: "+ nombreing +" Precion ing: "+ precioing+ " Total = " + total);
+            //MessageBox.Show("Producto: " +nombreprod+ " Precio: "+ precioprod + " Tipo: "+ tipo +" Ingrediente: "+ nombreing +" Precion ing: "+ precioing+ " Total = " + total);
 
 
 
-            string comando = "insert into ventas values(null," + idprod + "," + idIng + "," + total + ", curdate(), curtime());";
+            //string comando = "insert into ventas values(null," + idprod + "," + idIng + "," + total + ", curdate(), curtime());";
 
-            bd.AbrirConexion();
+            //bd.AbrirConexion();
 
-            bd.EjecutarComando(comando);
+            //bd.EjecutarComando(comando);
 
-            MessageBox.Show("Compra enviada a la BD");
-            bd.CerrarConexion();
+            //MessageBox.Show("Compra enviada a la BD");
+            //bd.CerrarConexion();
 
 
 
@@ -201,30 +201,94 @@ namespace Caffenio
 
             string query2 = "select max(id_ven) from ventas";
 
-            bd.EjecutarConsulta(query2);
+             bd.EjecutarConsulta(query2);
 
 
+            
 
-            while (bd.ResultadoConsulta.Read())
-            {
-                idventa = bd.ResultadoConsulta.GetInt32(0);   
-            }
+             while (bd.ResultadoConsulta.Read())
+             {
+                 idventa = bd.ResultadoConsulta.GetInt32(0);
+             }
 
             bd.CerrarConexion();
 
 
             //Mandar datos a Detalles de venta
 
-            bd.AbrirConexion();
+            //bd.AbrirConexion();
 
-            string comando3 = "insert into detallesven values(null," + idventa + ",'" + nombreprod + "','" + tipo + "','" + nombreing + "');";
+            //string comando3 = "insert into detallesven values(null," + idventa + ",'" + nombreprod + "','" + tipo + "','" + nombreing + "');";
 
-            bd.EjecutarComando(comando3);
+            //bd.EjecutarComando(comando3);
 
-            bd.CerrarConexion();
+            //bd.CerrarConexion();
 
-            Productos obj = new Productos(total);
-            obj.Show();
+            //Productos obj = new Productos(total);
+            //obj.Show();
+
+
+
+            idventa += 1;
+           
+            //obj2.Show();
+
+            Carritoventass obj8 = new Carritoventass();
+
+            //int[,] array = new int[2,2];
+
+            //array[0, 0] = idventa;
+            //array[0, 1] = idprod;
+            //array[0, 2] = idIng;
+            
+            obj8.Idven = idventa;
+            obj8.Idprod = idprod;
+            obj8.Iding = idIng;
+
+
+            CarritoVentas.total += this.total;
+
+
+            List<Carritoventass> listac = new List<Carritoventass>();
+
+
+            
+            
+          
+            
+
+
+            Manejador_ventas obj3 = new Manejador_ventas();
+
+
+
+
+
+
+            
+
+          
+            
+
+            CarritoVentas.iding = idIng;
+            CarritoVentas.idven = idventa;
+            CarritoVentas.idprod = idprod;
+
+
+            
+
+
+            
+
+            
+           
+           
+            CarritoVentas.dataGridView1.Rows.Add(idventa ,nombreprod ,idprod, tipo, idtipos, nombreing, idIng, total);
+            CarritoVentas.lblTotal.Text = CarritoVentas.total.ToString();
+
+
+            CarritoVentas obj7 = new CarritoVentas(idventa, idprod, idIng);     
+            this.Close();
          
         }
     }

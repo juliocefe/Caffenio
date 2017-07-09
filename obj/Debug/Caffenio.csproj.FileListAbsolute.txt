@@ -14,3 +14,4 @@ C:\Users\JULIO FELIX\Documents\Visual Studio 2012\Projects\Caffenio\Caffenio\obj
 C:\Users\JULIO FELIX\documents\visual studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.Productos.resources
 C:\Users\JULIO FELIX\documents\visual studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.Tipos.resources
 C:\Users\JULIO FELIX\documents\visual studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.CarritoVentas.resources
+C:\Users\JULIO FELIX\Documents\Visual Studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.Menu_usuario.resources

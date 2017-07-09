@@ -16,7 +16,7 @@ namespace Caffenio
         {
             List<Clsingredientes> Lista = new List<Clsingredientes>();
            
-            Clsingredientes obj = null;
+            //Clsingredientes obj = null;
 
             string query =  "select* from ingredientes;";
 
@@ -26,7 +26,7 @@ namespace Caffenio
             while (bd.ResultadoConsulta.Read())
             {
 
-                obj = new Clsingredientes();
+                Clsingredientes obj = new Clsingredientes();
 
 
                 obj.Id = Convert.ToInt32(bd.ResultadoConsulta["id_ing"]);

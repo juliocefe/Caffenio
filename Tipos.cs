@@ -74,6 +74,7 @@ namespace Caffenio
             Ingredientes obj = new Ingredientes(idprod,nombreprod,precioprod, idTipos, tipo);
             obj.Show();
 
+            this.Close();
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)

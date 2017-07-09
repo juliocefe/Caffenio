@@ -45,7 +45,10 @@ namespace Caffenio
         private void button4_Click(object sender, EventArgs e)
         {
             CarritoVentas obj = new CarritoVentas();
-            obj.Show();
+            obj.ShowDialog();
+
+
+
         }
     }
 }
