@@ -18,6 +18,14 @@ namespace Caffenio
             InitializeComponent();
         }
 
+        public Productos(bool cambioEstructura)
+        {
+            InitializeComponent();
+            this.cambioEstructura = cambioEstructura;
+        }
+
+        bool cambioEstructura = false;
+
 
         public Productos(double total)
         {
@@ -28,10 +36,30 @@ namespace Caffenio
 
         double total;
 
+      
         Manejador_Base_Datos bd = new Manejador_Base_Datos();
         Manejador_Productos obj = new Manejador_Productos();
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (cambioEstructura == true)
+            {
+                dataGridView1.Size = new Size(303, 300);
+                this.Size = new Size(343, 390);
+                button5.Location = new System.Drawing.Point(121, 320);
+                button5.Size = new Size(75, 23);
+
+                textBox1.Visible = false;
+                textBox2.Visible = false;
+
+                button1.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+                button4.Visible = false;
+            
+                button6.Visible = false;
+
+            }
+
             obj.Mostrar_Productos();
 
 
@@ -161,8 +189,25 @@ namespace Caffenio
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Tipos obj = new Tipos();
+
+            bd.AbrirConexion();
+
+            string query = "select * from productos where id_pro = " + dataGridView1.CurrentRow.Cells[0].Value + ";";
+
+            bd.EjecutarConsulta(query);
+
+            while (bd.ResultadoConsulta.Read())
+            {
+                id = Convert.ToInt32(bd.ResultadoConsulta["id_pro"]);
+                nombre = bd.ResultadoConsulta["nombre_pro"].ToString();
+                precio = Convert.ToDouble(bd.ResultadoConsulta["precio_pro"]);
+            }
+            
+            
+            Tipos obj = new Tipos(id, nombre, precio);
             obj.Show();
+
+            bd.CerrarConexion();
            
         }
     }

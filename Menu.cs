@@ -44,8 +44,14 @@ namespace Caffenio
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+            this.Hide();
             CarritoVentas obj = new CarritoVentas();
             obj.ShowDialog();
+
+
+
+            this.Show();
 
 
 

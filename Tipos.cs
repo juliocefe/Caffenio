@@ -110,5 +110,27 @@ namespace Caffenio
                 dataGridView1.Rows.Add(t.Id, t.Fk, t.Tipo, t.Descripcion);
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string query = "select * from detallespro where id_det_pro =" + dataGridView1.CurrentRow.Cells[0].Value + ";";
+
+            bd.AbrirConexion();
+
+            bd.EjecutarConsulta(query);
+
+            while (bd.ResultadoConsulta.Read())
+            {
+                idTipos = Convert.ToInt32(bd.ResultadoConsulta["id_det_pro"]);
+                tipo = bd.ResultadoConsulta["tipo_pro"].ToString();
+            }
+
+            bd.CerrarConexion();
+
+            Ingredientes obj = new Ingredientes(idprod, nombreprod, precioprod, idTipos, tipo);
+            obj.Show();
+
+            this.Close();
+        }
     }
 }

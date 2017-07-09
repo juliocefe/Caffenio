@@ -26,10 +26,6 @@ namespace Caffenio
 
         //}
 
-
-
-    
-
         Manejador_Base_Datos bd = new Manejador_Base_Datos();
         List<ClaseCarrito> Lista;
 
@@ -59,7 +55,8 @@ namespace Caffenio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Productos obj = new Productos();
+            bool cambiaEstructura =true;
+            Productos obj = new Productos(cambiaEstructura);
             obj.Show();
             
         }
@@ -70,6 +67,7 @@ namespace Caffenio
         public static Label lblTotal = new Label();
         private void CarritoVentas_Load(object sender, EventArgs e)
         {
+           
             lblTotal.Text = total.ToString();
             lblTotal.Visible = true;
             this.Controls.Add(lblTotal);
@@ -83,9 +81,7 @@ namespace Caffenio
             if (columnas_creadas == false)
             {
               
-                
-                
-                
+
                 dataGridView1.Columns.Add("id_venf", "id venta");
                 dataGridView1.Columns.Add("nombrepro", "Producto");
                 dataGridView1.Columns.Add("idprod", "idprod"); // columna 2
@@ -105,6 +101,7 @@ namespace Caffenio
             dataGridView1.Columns[6].Visible = false;
            // dataGridView1.Rows.Add(nombreprod, tipo, nombreing, total);
 
+           
             
         }
 
@@ -127,15 +124,6 @@ namespace Caffenio
 
             //Manejador_ventas obj5 = new Manejador_ventas();
 
-
-
-            
-            
-
-            
-
-            
-
             bd.AbrirConexion();
 
 
@@ -152,9 +140,6 @@ namespace Caffenio
                
 
                  bd.EjecutarComando(comando);
-
-
-
 
             }
 
@@ -177,17 +162,30 @@ namespace Caffenio
 
             bd.CerrarConexion();
 
+            lblTotal.Text = "";
             MessageBox.Show("Compra realizada!");
             this.Close();
-
-           
-                
+    
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Menu_usuario obj4 = new Menu_usuario();
             obj4.Show();
+        }
+
+        private void CarritoVentas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            total = 0;
+            lblTotal.Text = "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            total -= Convert.ToDouble(dataGridView1.CurrentRow.Cells[7].Value);
+
+            dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
+
         }
     }
 }

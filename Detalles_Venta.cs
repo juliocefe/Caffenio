@@ -12,11 +12,13 @@ namespace Caffenio
 {
     public partial class Detalles_Venta : Form
     {
-        public Detalles_Venta()
+        public Detalles_Venta(string query)
         {
             InitializeComponent();
+            this.query = query;
         }
-      
+
+        string query;
         Manejador_Base_Datos bd = new Manejador_Base_Datos();
 
         Manejador_ventas obj = new Manejador_ventas();
@@ -30,12 +32,12 @@ namespace Caffenio
             bd.AbrirConexion();
 
            
+            
 
 
-
-            foreach (var i in obj2.MostrarDetalles())
+            foreach (var i in obj2.MostrarDetalles(query))
             {
-                dataGridView1.Rows.Add(i.Id, i.Nombre, i.Tipo, i.Descripcion, i.Ingrediente, i.Cantidad, i.Total, i.Fecha, i.Hora);
+                dataGridView1.Rows.Add(i.Id, i.Nombre, i.Tipo, i.Descripcion, i.Ingrediente,i.Total);
             }
 
            
