@@ -116,5 +116,42 @@ namespace Caffenio
             return Lista;
         }
 
+        //DATAGRID DEL MODULO REPORTES
+        public List<ClaseTipos> MostrarListaPorId(int id)
+        {
+
+            List<ClaseTipos> Lista = new List<ClaseTipos>();
+
+            // ClaseTipos obj = null;
+
+            string query = "select id_det_pro, id_prodff, tipo_pro, descri_pro from detallespro where id_prodff = " + id + ";";
+
+            bd.AbrirConexion();
+
+            bd.EjecutarConsulta(query);
+
+            while (bd.ResultadoConsulta.Read())
+            {
+                ClaseTipos obj = new ClaseTipos();
+
+
+                obj.Id = bd.ResultadoConsulta.GetInt32(0);
+               // obj.Fk = bd.ResultadoConsulta.GetInt32(1);
+                obj.Tipo = bd.ResultadoConsulta.GetString(2);
+                obj.Descripcion = bd.ResultadoConsulta.GetString(3);
+
+
+                Lista.Add(obj);
+            }
+
+
+            bd.CerrarConexion();
+
+            return Lista;
+        }
+
+
+
+
     }
 }

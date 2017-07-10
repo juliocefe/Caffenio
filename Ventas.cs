@@ -40,5 +40,10 @@ namespace Caffenio
             Detalles_Venta obj = new Detalles_Venta(query);
             obj.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

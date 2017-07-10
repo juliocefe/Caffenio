@@ -27,7 +27,7 @@ namespace Caffenio
         //}
 
         Manejador_Base_Datos bd = new Manejador_Base_Datos();
-        List<ClaseCarrito> Lista;
+
 
         public CarritoVentas(int Idprod, int Iding, int idven  )
         {
@@ -46,9 +46,9 @@ namespace Caffenio
        public static int idprod;
        public static int iding;
 
-        string nombreprod;
-        string tipo;
-        string nombreing;
+        //string nombreprod;
+        //string tipo;
+        //string nombreing;
 
          public static double total = 0;
 

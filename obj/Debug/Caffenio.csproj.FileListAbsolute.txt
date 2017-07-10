@@ -15,3 +15,8 @@ C:\Users\JULIO FELIX\documents\visual studio 2012\Projects\Caffenio\Caffenio\obj
 C:\Users\JULIO FELIX\documents\visual studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.Tipos.resources
 C:\Users\JULIO FELIX\documents\visual studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.CarritoVentas.resources
 C:\Users\JULIO FELIX\Documents\Visual Studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.Menu_usuario.resources
+C:\Users\JULIO FELIX\Documents\Visual Studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.MenuAdminstrador.resources
+C:\Users\JULIO FELIX\Documents\Visual Studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.PorProducto.resources
+C:\Users\JULIO FELIX\Documents\Visual Studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.ListaProductos.resources
+C:\Users\JULIO FELIX\Documents\Visual Studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.PorPeriodo.resources
+C:\Users\JULIO FELIX\Documents\Visual Studio 2012\Projects\Caffenio\Caffenio\obj\Debug\Caffenio.Login.resources

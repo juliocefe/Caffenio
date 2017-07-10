@@ -63,9 +63,49 @@ namespace Caffenio.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _69a476ad_e282_4db1_9e6f_da9b31f7aaaf {
+            get {
+                object obj = ResourceManager.GetObject("69a476ad-e282-4db1-9e6f-da9b31f7aaaf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap aaaa {
+            get {
+                object obj = ResourceManager.GetObject("aaaa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap aaaa1 {
+            get {
+                object obj = ResourceManager.GetObject("aaaa1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_75_anios_Final {
             get {
                 object obj = ResourceManager.GetObject("Logo_75_anios-Final", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Productos__Tipos {
+            get {
+                object obj = ResourceManager.GetObject("Productos -Tipos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

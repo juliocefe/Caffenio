@@ -61,12 +61,42 @@
     <Compile Include="clasventas.cs" />
     <Compile Include="clsDetallesVenta.cs" />
     <Compile Include="Clsingredientes.cs" />
+    <Compile Include="ListaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaProductos.Designer.cs">
+      <DependentUpon>ListaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManejadorCarrito.cs" />
     <Compile Include="Menu usuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu usuario.Designer.cs">
       <DependentUpon>Menu usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdminstrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAdminstrador.Designer.cs">
+      <DependentUpon>MenuAdminstrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PorPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PorPeriodo.Designer.cs">
+      <DependentUpon>PorPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PorProducto.Designer.cs">
+      <DependentUpon>PorProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos.cs">
       <SubType>Form</SubType>
@@ -114,8 +144,23 @@
     <EmbeddedResource Include="CarritoVentas.resx">
       <DependentUpon>CarritoVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListaProductos.resx">
+      <DependentUpon>ListaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu usuario.resx">
       <DependentUpon>Menu usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAdminstrador.resx">
+      <DependentUpon>MenuAdminstrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PorPeriodo.resx">
+      <DependentUpon>PorPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PorProducto.resx">
+      <DependentUpon>PorProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>
@@ -160,6 +205,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo_75_anios-Final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Productos -Tipos.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\69a476ad-e282-4db1-9e6f-da9b31f7aaaf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aaaa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aaaa1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

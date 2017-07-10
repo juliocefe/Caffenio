@@ -19,6 +19,12 @@ namespace Caffenio
         }
 
 
+        public Tipos(int id)
+        {
+            InitializeComponent();
+            this.idprod = id;
+        }
+
         public Tipos(int id, string nombre, double precio )
         {
             InitializeComponent();

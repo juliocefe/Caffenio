@@ -56,5 +56,20 @@ namespace Caffenio
 
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+           
+            Login obj = new Login();
+            obj.Show();
+
+            this.Hide();
+
+            
+           
+           
+           
+        }
     }
 }
