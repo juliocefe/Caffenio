@@ -112,6 +112,7 @@
             this.listaDeIngredientesToolStripMenuItem.Name = "listaDeIngredientesToolStripMenuItem";
             this.listaDeIngredientesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.listaDeIngredientesToolStripMenuItem.Text = "Lista de ingredientes";
+            this.listaDeIngredientesToolStripMenuItem.Click += new System.EventHandler(this.listaDeIngredientesToolStripMenuItem_Click);
             // 
             // listaDeVentasToolStripMenuItem
             // 

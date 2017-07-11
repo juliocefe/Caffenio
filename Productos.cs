@@ -36,12 +36,12 @@ namespace Caffenio
 
         double total;
 
-      
+
         Manejador_Base_Datos bd = new Manejador_Base_Datos();
         Manejador_Productos obj = new Manejador_Productos();
         private void Form1_Load(object sender, EventArgs e)
         {
-         
+           // dataGridView1.AllowUserToAddRows = false;
             if (cambioEstructura == true)
             {
                 dataGridView1.Size = new Size(303, 300);
@@ -56,7 +56,7 @@ namespace Caffenio
                 button2.Visible = false;
                 button3.Visible = false;
                 button4.Visible = false;
-            
+
                 button6.Visible = false;
 
             }
@@ -66,7 +66,7 @@ namespace Caffenio
 
             foreach (var item in obj.Mostrar_Productos())
             {
-                    dataGridView1.Rows.Add(item.Id, item.Nombre, item.Precio);
+                dataGridView1.Rows.Add(item.Id, item.Nombre, item.Precio);
             }
 
             textBox1.Text = string.Empty;
@@ -79,13 +79,13 @@ namespace Caffenio
             {
 
 
-                try
-                {
-                    MySqlConnection conexion = new MySqlConnection("server = localhost; database = Caffenio2; uid = root; pwd = 123;");
-
+                //try
+                //{
+                    MySqlConnection conexion = new MySqlConnection("server = localhost; database = Caffenio3; uid = root; pwd = 123;");
+                    conexion.Open();
 
                     MySqlCommand Insertar = new MySqlCommand("insert into productos (nombre_pro, precio_pro)values('" + textBox1.Text + "'," + textBox2.Text + ");", conexion);
-                    conexion.Open();
+                    
 
                     Insertar.ExecuteNonQuery();
 
@@ -98,15 +98,16 @@ namespace Caffenio
                         dataGridView1.Rows.Add(item.Id, item.Nombre, item.Precio);
                     }
 
+                  
                     textBox1.Text = string.Empty;
                     textBox2.Text = string.Empty;
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("El producto ya se encuentra en la base de datos");
-                    textBox1.Text = string.Empty;
+                //}
+                //catch (Exception)
+                //{
+                //    MessageBox.Show("El producto ya se encuentra en la base de datos");
+                //    textBox1.Text = string.Empty;
 
-                }
+                //}
             }
             else
             {
@@ -117,63 +118,78 @@ namespace Caffenio
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            if (textBox1.Text != dataGridView1.CurrentRow.Cells[1].Value.ToString() || textBox2.Text != dataGridView1.CurrentRow.Cells[2].Value.ToString())
+            if (textBox1.Text != "" && textBox2.Text != "")
             {
-                
-           
-            bd.AbrirConexion();
+                if (textBox1.Text != dataGridView1.CurrentRow.Cells[1].Value.ToString() || textBox2.Text != dataGridView1.CurrentRow.Cells[2].Value.ToString())
+                {
 
-            string command = "update productos set nombre_pro = '" + textBox1.Text + "', precio_pro = " + textBox2.Text + " where id_pro =" + dataGridView1.CurrentRow.Cells[0].Value + ";";
 
-            bd.EjecutarComando(command);
+                    bd.AbrirConexion();
 
-            bd.CerrarConexion();
+                    string command = "update productos set nombre_pro = '" + textBox1.Text + "', precio_pro = " + textBox2.Text + " where id_pro =" + dataGridView1.CurrentRow.Cells[0].Value + ";";
 
-            dataGridView1.Rows.Clear();
+                    bd.EjecutarComando(command);
 
-            foreach (var item in obj.Mostrar_Productos())
-            {
-                dataGridView1.Rows.Add(item.Id, item.Nombre, item.Precio);
-            }
+                    bd.CerrarConexion();
 
+                    dataGridView1.Rows.Clear();
+
+                    foreach (var item in obj.Mostrar_Productos())
+                    {
+                        dataGridView1.Rows.Add(item.Id, item.Nombre, item.Precio);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Los datos son los mismos cavezon");
+                }
             }
             else
             {
-                MessageBox.Show("Los datos son los mismos cavezon");
+                MessageBox.Show("Estas dejando espacios vacios cavezon");
             }
+            
 
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+         
             try
             {
-                bd.AbrirConexion();
-
-                string command = "delete from productos where id_pro = " + dataGridView1.CurrentRow.Cells[0].Value + ";";
-
-                bd.EjecutarComando(command);
-
-                bd.CerrarConexion();
-
-                dataGridView1.Rows.Clear();
-
-                foreach (var item in obj.Mostrar_Productos())
+                if (dataGridView1.CurrentRow.Index == dataGridView1.Rows.Count - 1)
                 {
-                    dataGridView1.Rows.Add(item.Id, item.Nombre, item.Precio);
+                    MessageBox.Show("Seleccionaste una fila vacia");
                 }
+                else
+                {
+                    bd.AbrirConexion();
+
+                    string command = "delete from productos where id_pro = " + dataGridView1.CurrentRow.Cells[0].Value + ";";
+
+                    bd.EjecutarComando(command);
+
+                    bd.CerrarConexion();
+
+                    dataGridView1.Rows.Clear();
+
+                    foreach (var item in obj.Mostrar_Productos())
+                    {
+                        dataGridView1.Rows.Add(item.Id, item.Nombre, item.Precio);
+                    }
+                }
+            
             }
             catch (Exception)
             {
                 MessageBox.Show("Necesitas borrar tu referencias(foreing keys) en otras tablas para poder borrar este poducto");
-           
-            }
-           
 
-           
+            }
+
+
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -186,7 +202,7 @@ namespace Caffenio
         double precio;
         private void button5_Click(object sender, EventArgs e)
         {
-           
+
 
             bd.AbrirConexion();
 
@@ -200,9 +216,9 @@ namespace Caffenio
                 nombre = bd.ResultadoConsulta["nombre_pro"].ToString();
                 precio = Convert.ToDouble(bd.ResultadoConsulta["precio_pro"]);
             }
-            
 
-            Tipos obj = new Tipos(id,nombre, precio);
+
+            Tipos obj = new Tipos(id, nombre, precio);
             obj.Show();
 
             bd.CerrarConexion();
@@ -225,8 +241,8 @@ namespace Caffenio
                 nombre = bd.ResultadoConsulta["nombre_pro"].ToString();
                 precio = Convert.ToDouble(bd.ResultadoConsulta["precio_pro"]);
             }
-            
-            
+
+
             Tipos obj = new Tipos(id, nombre, precio);
             obj.Show();
 
@@ -236,9 +252,14 @@ namespace Caffenio
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            button1.Enabled = false;
-            textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            if (dataGridView1.CurrentRow.Index != dataGridView1.Rows.Count - 1)
+            {
+                button1.Enabled = false;
+                textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            }
+         
+          
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -248,7 +269,7 @@ namespace Caffenio
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -259,6 +280,11 @@ namespace Caffenio
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             button1.Enabled = true;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

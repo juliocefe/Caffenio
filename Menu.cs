@@ -13,12 +13,12 @@ namespace Caffenio
     public partial class Menu : Form
     {
 
-///sadasdsss
+        ///sadasdsss
         public Menu()
         {
             InitializeComponent();
         }
- 
+
         private void button1_Click(object sender, EventArgs e)
         {
             Productos obj = new Productos();
@@ -60,16 +60,16 @@ namespace Caffenio
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
-           
+
             Login obj = new Login();
             obj.Show();
 
             this.Hide();
 
-            
-           
-           
-           
+
+
+
+
         }
     }
 }

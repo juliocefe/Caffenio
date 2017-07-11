@@ -50,7 +50,7 @@ namespace Caffenio
         private void Ingredientes_Load(object sender, EventArgs e)
         {
 
-            
+
             foreach (var item in obj.MostrarIngredientes())
             {
                 dataGridView1.Rows.Add(item.Id, item.Nombre, item.Precio);
@@ -58,14 +58,14 @@ namespace Caffenio
 
             textBox1.Text = "";
             textBox2.Text = string.Empty;
-       }
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           ;
-        }
-      
 
-      
+        }
+
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -84,20 +84,20 @@ namespace Caffenio
             {
                 dataGridView1.Rows.Add(item.Id, item.Nombre, item.Precio);
             }
-          
-
-               //{
-               // DialogResult Result;
-               // Result = MessageBox.Show("Borrar este registro", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-               // if (Result == DialogResult.Yes)
-               // {
-               //     clsManejadorProducto delete = new clsManejadorProducto();
-               //     delete.eliminarproducto(Convert.ToInt32(dtgTablaProductos.CurrentRow.Cells[0].Value));
-               //     LlenarDatosProductosYEmpleados();
-               //     MessageBox.Show("Producto Eliminado");
 
 
-               // }
+            //{
+            // DialogResult Result;
+            // Result = MessageBox.Show("Borrar este registro", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            // if (Result == DialogResult.Yes)
+            // {
+            //     clsManejadorProducto delete = new clsManejadorProducto();
+            //     delete.eliminarproducto(Convert.ToInt32(dtgTablaProductos.CurrentRow.Cells[0].Value));
+            //     LlenarDatosProductosYEmpleados();
+            //     MessageBox.Show("Producto Eliminado");
+
+
+            // }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -193,29 +193,29 @@ namespace Caffenio
             }
             bd.CerrarConexion();
 
-           
-            
+
+
             //Suma de el precio del producto con el precio ingrediente
             total = precioprod + precioing;
 
-       
+
             ///Capturar el id de la venta
             bd.AbrirConexion();
 
             string query2 = "select max(id_ven) from ventas";
 
-             bd.EjecutarConsulta(query2);
+            bd.EjecutarConsulta(query2);
 
-             while (bd.ResultadoConsulta.Read())
-             {
-                 idventa = bd.ResultadoConsulta.GetInt32(0);
-             }
+            while (bd.ResultadoConsulta.Read())
+            {
+                idventa = bd.ResultadoConsulta.GetInt32(0);
+            }
 
             bd.CerrarConexion();
 
 
             idventa += 1;
-           
+
             //obj2.Show();
 
             Carritoventass obj8 = new Carritoventass();
@@ -225,7 +225,7 @@ namespace Caffenio
             //array[0, 0] = idventa;
             //array[0, 1] = idprod;
             //array[0, 2] = idIng;
-            
+
             obj8.Idven = idventa;
             obj8.Idprod = idprod;
             obj8.Iding = idIng;
@@ -242,19 +242,19 @@ namespace Caffenio
             CarritoVentas.idven = idventa;
             CarritoVentas.idprod = idprod;
 
-            CarritoVentas.dataGridView1.Rows.Add(idventa ,nombreprod ,idprod, tipo, idtipos, nombreing, idIng, total);
+            CarritoVentas.dataGridView1.Rows.Add(idventa, nombreprod, idprod, tipo, idtipos, nombreing, idIng, total);
             CarritoVentas.lblTotal.Text = CarritoVentas.total.ToString();
 
-            CarritoVentas obj7 = new CarritoVentas(idventa, idprod, idIng);     
+            CarritoVentas obj7 = new CarritoVentas(idventa, idprod, idIng);
             this.Close();
-         
+
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             button1.Enabled = false;
-             textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-             textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -38,7 +38,7 @@ namespace Caffenio
 
             //form productos; 346, 398 pasara a : 702, 398
             //boton salir; 242, 324 pasara a: 599, 324
-            
+
             dataGridView2.Rows.Clear();
             this.Size = new System.Drawing.Size(702, 398);
             button2.Location = new System.Drawing.Point(599, 324);
@@ -49,7 +49,7 @@ namespace Caffenio
             {
                 dataGridView2.Rows.Add(i.Id, i.Tipo, i.Descripcion);
             }
-              
+
         }
     }
 }

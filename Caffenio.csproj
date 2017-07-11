@@ -61,6 +61,18 @@
     <Compile Include="clasventas.cs" />
     <Compile Include="clsDetallesVenta.cs" />
     <Compile Include="Clsingredientes.cs" />
+    <Compile Include="IngredientesCarrito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngredientesCarrito.Designer.cs">
+      <DependentUpon>IngredientesCarrito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaIngredientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaIngredientes.Designer.cs">
+      <DependentUpon>ListaIngredientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +133,12 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductosCarrito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductosCarrito.Designer.cs">
+      <DependentUpon>ProductosCarrito.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Detalles_Venta.cs">
@@ -135,6 +153,12 @@
     <Compile Include="Tipos.Designer.cs">
       <DependentUpon>Tipos.cs</DependentUpon>
     </Compile>
+    <Compile Include="TiposCarrito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TiposCarrito.Designer.cs">
+      <DependentUpon>TiposCarrito.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +167,12 @@
     </Compile>
     <EmbeddedResource Include="CarritoVentas.resx">
       <DependentUpon>CarritoVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngredientesCarrito.resx">
+      <DependentUpon>IngredientesCarrito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaIngredientes.resx">
+      <DependentUpon>ListaIngredientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaProductos.resx">
       <DependentUpon>ListaProductos.cs</DependentUpon>
@@ -171,6 +201,9 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductosCarrito.resx">
+      <DependentUpon>ProductosCarrito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -186,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tipos.resx">
       <DependentUpon>Tipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiposCarrito.resx">
+      <DependentUpon>TiposCarrito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
@@ -217,6 +253,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\aaaa1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito 2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -31,18 +31,23 @@ namespace Caffenio
         {
             bd.AbrirConexion();
 
-           
-            
+
+
 
 
             foreach (var i in obj2.MostrarDetalles(query))
             {
-                dataGridView1.Rows.Add(i.Id, i.Nombre, i.Tipo, i.Descripcion, i.Ingrediente,i.Total);
+                dataGridView1.Rows.Add(i.Id, i.Nombre, i.Tipo, i.Descripcion, i.Ingrediente, i.Total);
             }
 
-           
-           
 
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

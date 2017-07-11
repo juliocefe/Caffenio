@@ -25,14 +25,14 @@ namespace Caffenio
             this.idprod = id;
         }
 
-        public Tipos(int id, string nombre, double precio )
+        public Tipos(int id, string nombre, double precio)
         {
             InitializeComponent();
 
             idprod = id;
             nombreprod = nombre;
             precioprod = precio;
-  
+
         }
 
 
@@ -47,8 +47,7 @@ namespace Caffenio
         private void Tipos_Load(object sender, EventArgs e)
         {
 
-
-            foreach (var t in obj.MostrarPorId(idprod) )
+            foreach (var t in obj.MostrarPorId(idprod))
             {
                 dataGridView1.Rows.Add(t.Id, t.Fk, t.Tipo, t.Descripcion);
             }
@@ -57,7 +56,7 @@ namespace Caffenio
 
         int idTipos;
         string tipo;
-     
+
 
 
         private void button5_Click(object sender, EventArgs e)
@@ -77,7 +76,7 @@ namespace Caffenio
 
             bd.CerrarConexion();
 
-            Ingredientes obj = new Ingredientes(idprod,nombreprod,precioprod, idTipos, tipo);
+            Ingredientes obj = new Ingredientes(idprod, nombreprod, precioprod, idTipos, tipo);
             obj.Show();
 
             this.Close();
@@ -100,7 +99,7 @@ namespace Caffenio
 
                 comando.ExecuteNonQuery();
 
-             
+
 
                 conexion.Close();
                 MessageBox.Show("Datos enviados a la BD");
@@ -119,24 +118,29 @@ namespace Caffenio
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string query = "select * from detallespro where id_det_pro =" + dataGridView1.CurrentRow.Cells[0].Value + ";";
+            //string query = "select * from detallespro where id_det_pro =" + dataGridView1.CurrentRow.Cells[0].Value + ";";
 
-            bd.AbrirConexion();
+            //bd.AbrirConexion();
 
-            bd.EjecutarConsulta(query);
+            //bd.EjecutarConsulta(query);
 
-            while (bd.ResultadoConsulta.Read())
-            {
-                idTipos = Convert.ToInt32(bd.ResultadoConsulta["id_det_pro"]);
-                tipo = bd.ResultadoConsulta["tipo_pro"].ToString();
-            }
+            //while (bd.ResultadoConsulta.Read())
+            //{
+            //    idTipos = Convert.ToInt32(bd.ResultadoConsulta["id_det_pro"]);
+            //    tipo = bd.ResultadoConsulta["tipo_pro"].ToString();
+            //}
 
-            bd.CerrarConexion();
+            //bd.CerrarConexion();
 
-            Ingredientes obj = new Ingredientes(idprod, nombreprod, precioprod, idTipos, tipo);
-            obj.Show();
+            //Ingredientes obj = new Ingredientes(idprod, nombreprod, precioprod, idTipos, tipo);
+            //obj.Show();
 
-            this.Close();
+            //this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

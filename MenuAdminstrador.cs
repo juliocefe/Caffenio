@@ -36,10 +36,10 @@ namespace Caffenio
             obj.Show();
         }
 
-        
+
         private void carritoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -55,7 +55,7 @@ namespace Caffenio
         }
 
 
-        
+
         private void listaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -77,6 +77,12 @@ namespace Caffenio
         private void MenuAdminstrador_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void listaDeIngredientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaIngredientes obj = new ListaIngredientes();
+            obj.Show();
         }
 
     }

@@ -20,13 +20,13 @@ namespace Caffenio
         private void Login_Load(object sender, EventArgs e)
         {
             textBox1.Focus();
-            
+
         }
 
 
         int nivel;
         int id;
-     
+        bool dejaloentrar = false;
         //string pista;
 
         Manejador_Base_Datos BD = new Manejador_Base_Datos();
@@ -42,21 +42,20 @@ namespace Caffenio
             {
 
                 nivel = BD.ResultadoConsulta.GetInt32(0);
-            
+
                 id = BD.ResultadoConsulta.GetInt32(1);
-              
+
 
                 BD.CerrarConexion();
-
-              
-                this.Close();
 
 
                 MenuAdminstrador obj = new MenuAdminstrador();
                 obj.Show();
 
+                dejaloentrar = true;
 
-            
+                this.Close();
+
             }
             else
             {
@@ -69,8 +68,10 @@ namespace Caffenio
                 MessageBox.Show("Constraseña o usuario incorrectos");
                 if (intentos == 3)
                 {
+                    dejaloentrar = false;
                     MessageBox.Show("Has exedido el limite de intentos el sistema va a cerrarse");
                     this.Close();
+
                 }
 
             }
@@ -80,27 +81,31 @@ namespace Caffenio
 
         private void label3_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void label3_Leave(object sender, EventArgs e)
         {
-           
+
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-        
+
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            if (dejaloentrar == false)
+	        {
+		         Application.Exit();
+	        }
+           
         }
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
-        }       
+
+        }
     }
 }

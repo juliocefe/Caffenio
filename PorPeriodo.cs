@@ -45,7 +45,7 @@ namespace Caffenio
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-            MySqlConnection conexion = new MySqlConnection("Server = localhost; database = Caffenio3; Uid = root; pwd= 123;");           
+            MySqlConnection conexion = new MySqlConnection("Server = localhost; database = Caffenio3; Uid = root; pwd= 123;");
             conexion.Open();
             MySqlCommand query = new MySqlCommand("select id_ven, total, fecha, hora from ventas where fecha between '" + dateTimePicker1.Text + "' and '" + dateTimePicker2.Text + "';", conexion);
 

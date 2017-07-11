@@ -56,7 +56,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(422, 282);
+            this.dataGridView1.Size = new System.Drawing.Size(405, 282);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -102,6 +102,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -114,7 +115,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(589, 338);
+            this.button4.Location = new System.Drawing.Point(342, 338);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 4;
@@ -129,34 +130,35 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "Elegir";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 312);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(43, 20);
             this.textBox1.TabIndex = 6;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 312);
+            this.textBox2.Location = new System.Drawing.Point(68, 312);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 7;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(224, 312);
+            this.textBox3.Location = new System.Drawing.Point(174, 312);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(128, 20);
+            this.textBox3.Size = new System.Drawing.Size(118, 20);
             this.textBox3.TabIndex = 8;
             // 
             // Tipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 370);
+            this.ClientSize = new System.Drawing.Size(429, 370);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
