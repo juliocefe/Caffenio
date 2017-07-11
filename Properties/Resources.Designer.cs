@@ -63,6 +63,16 @@ namespace Caffenio.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _13442161_10153775910532476_6588296115035621279_n {
+            get {
+                object obj = ResourceManager.GetObject("13442161_10153775910532476_6588296115035621279_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _69a476ad_e282_4db1_9e6f_da9b31f7aaaf {
             get {
                 object obj = ResourceManager.GetObject("69a476ad-e282-4db1-9e6f-da9b31f7aaaf", resourceCulture);

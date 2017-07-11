@@ -260,6 +260,9 @@
   <ItemGroup>
     <None Include="Resources\carrito 2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13442161_10153775910532476_6588296115035621279_n.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
